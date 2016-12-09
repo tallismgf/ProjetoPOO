@@ -198,9 +198,24 @@ public class DadosdoTitulo extends javax.swing.JInternalFrame {
     private void DTOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DTOKMouseClicked
         
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_DTOKMouseClicked
-
+    
+    public String getNumDocumento(){
+        return DTNumeroDocumento.getText();
+    }
+    
+    public String getNossoNumero(){
+        return DTNossoNumero.getText();
+    }
+    
+    public String getDigitoNossoNumero(){
+        return DTDigitoNossoNumero.getText();
+    }
+    
+    public float getValor(){
+        return Float.parseFloat(DTValor.getText());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DTAceite;

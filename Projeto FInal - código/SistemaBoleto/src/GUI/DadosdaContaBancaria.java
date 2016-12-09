@@ -129,9 +129,24 @@ public class DadosdaContaBancaria extends javax.swing.JInternalFrame {
     private void DCBOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DCBOKMouseClicked
         
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_DCBOKMouseClicked
 
+    public int getNumConta(){
+        return Integer.parseInt(DCBNumeroConta.getText());
+    }
+    
+    public int getCarteira(){
+        return Integer.parseInt(DCBTipoCarteira.getText());
+    }
+    
+    public int getNumAgencia(){
+        return Integer.parseInt(DCBNumeroAgencia.getText());
+    }
+    
+    public String getNomeAgencia(){
+        return DCBNomeAgencia.getText();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DCBBanco;

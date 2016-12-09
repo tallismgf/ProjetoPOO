@@ -172,9 +172,35 @@ public class DadosdoSacadoAvalista extends javax.swing.JInternalFrame {
     private void DSAOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DSAOKMouseClicked
         
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_DSAOKMouseClicked
-
+public String getNome(){
+        return DSANome.getText();
+    }
+    
+    public String getNumero(){
+        return DSANumero.getText();
+    }
+    
+    public String getLocalidade(){
+        return DSALocalidade.getText();
+    }
+    
+    public String getLogradouro(){
+        return DSALogradouro.getText();
+    }
+    
+    public String getCPF(){
+        return DSACPF.getText();
+    }
+    
+    public String getBairro(){
+        return DSABairro.getText();
+    }
+    
+    public String getCEP(){
+        return DSACEP.getText();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DSABairro;

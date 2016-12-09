@@ -1,9 +1,28 @@
 package GUI;
 
+import controle.MeuPrimeiroBoleto;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Date;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import org.jrimum.bopepo.BancosSuportados;
 import org.jrimum.bopepo.Boleto;
 import org.jrimum.bopepo.view.BoletoViewer;
+import org.jrimum.domkee.comum.pessoa.endereco.CEP;
+import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
+import org.jrimum.domkee.comum.pessoa.endereco.UnidadeFederativa;
+import org.jrimum.domkee.financeiro.banco.febraban.Agencia;
+import org.jrimum.domkee.financeiro.banco.febraban.Carteira;
+import org.jrimum.domkee.financeiro.banco.febraban.Cedente;
+import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
+import org.jrimum.domkee.financeiro.banco.febraban.NumeroDaConta;
+import org.jrimum.domkee.financeiro.banco.febraban.Sacado;
+import org.jrimum.domkee.financeiro.banco.febraban.SacadorAvalista;
+import org.jrimum.domkee.financeiro.banco.febraban.TipoDeTitulo;
+import org.jrimum.domkee.financeiro.banco.febraban.Titulo;
+import org.jrimum.domkee.financeiro.banco.febraban.Titulo.EnumAceite;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -144,9 +163,76 @@ public class MDIBoleto extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuTituloMouseClicked
 
     private void MenuFinalizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuFinalizarMouseClicked
+        /*
+                 * INFORMANDO DADOS SOBRE O CEDENTE.
+         */
+        DadosCedente DCTes = new DadosCedente();
+        Cedente cedente = new Cedente(DCTes.retornaNome(), DCTes.retornaCNPJ());
         
+        /*
+                 * INFORMANDO DADOS SOBRE O SACADO.
+         */
         
+        DadosdoSacado DS = new DadosdoSacado();
+        Sacado sacado = new Sacado(DS.getNome(), DS.getCPF());
+
+        // Informando o endereço do sacado.
+        Endereco enderecoSac = new Endereco();
+        enderecoSac.setUF(UnidadeFederativa.RN);
+        enderecoSac.setLocalidade(DS.getLocalidade());
+        enderecoSac.setCep(new CEP(DS.getCEP()));
+        enderecoSac.setBairro(DS.getBairro());
+        enderecoSac.setLogradouro(DS.getLogradouro());
+        enderecoSac.setNumero(DS.getNumero());
+        sacado.addEndereco(enderecoSac);
+
+        /*
+                 * INFORMANDO DADOS SOBRE O SACADOR AVALISTA.
+         */
         
+        DadosdoSacadoAvalista DSA = new DadosdoSacadoAvalista();
+        SacadorAvalista sacadorAvalista = new SacadorAvalista(DSA.getNome(), DSA.getCPF());
+
+        // Informando o endereço do sacador avalista.
+        Endereco enderecoSacAval = new Endereco();
+        enderecoSacAval.setUF(UnidadeFederativa.DF);
+        enderecoSacAval.setLocalidade(DSA.getLocalidade());
+        enderecoSacAval.setCep(new CEP(DSA.getCEP()));
+        enderecoSacAval.setBairro(DSA.getBairro());
+        enderecoSacAval.setLogradouro(DSA.getLogradouro());
+        enderecoSacAval.setNumero(DSA.getNumero());
+        sacadorAvalista.addEndereco(enderecoSacAval);
+
+        /*
+                 * INFORMANDO OS DADOS SOBRE O TÍTULO.
+         */
+        
+        // Informando dados sobre a conta bancária do título.
+        DadosdaContaBancaria DCB = new DadosdaContaBancaria();
+        
+        ContaBancaria contaBancaria = new ContaBancaria(BancosSuportados.BANCO_DO_BRASIL.create());
+        contaBancaria.setNumeroDaConta(new NumeroDaConta(DCB.getNumConta(), "0"));
+        contaBancaria.setCarteira(new Carteira(DCB.getCarteira()));
+        contaBancaria.setAgencia(new Agencia(DCB.getNumAgencia(), DCB.getNomeAgencia()));
+
+        
+        DadosdoTitulo titu = new DadosdoTitulo();
+        Titulo titulo = new Titulo(contaBancaria, sacado, cedente, sacadorAvalista);
+        titulo.setNumeroDoDocumento(titu.getNumDocumento());
+        titulo.setNossoNumero(titu.getNossoNumero());
+        titulo.setDigitoDoNossoNumero(titu.getDigitoNossoNumero());
+        titulo.setValor(BigDecimal.valueOf(titu.getValor()));
+        titulo.setDataDoDocumento(new Date());
+        titulo.setDataDoVencimento(new Date());
+        titulo.setTipoDeDocumento(TipoDeTitulo.DM_DUPLICATA_MERCANTIL);
+        titulo.setAceite(EnumAceite.A);
+        titulo.setDesconto(new BigDecimal(0.05));
+        titulo.setDeducao(BigDecimal.ZERO);
+        titulo.setMora(BigDecimal.ZERO);
+        titulo.setAcrecimo(BigDecimal.ZERO);
+        titulo.setValorCobrado(BigDecimal.ZERO);
+        
+        MeuPrimeiroBoleto.gerarBoleto(titulo);
         
     }//GEN-LAST:event_MenuFinalizarMouseClicked
 

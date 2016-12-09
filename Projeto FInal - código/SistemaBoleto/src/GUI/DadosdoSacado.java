@@ -172,9 +172,36 @@ public class DadosdoSacado extends javax.swing.JInternalFrame {
     private void DSOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DSOKMouseClicked
         
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_DSOKMouseClicked
 
+    public String getNome(){
+        return DSNome.getText();
+    }
+    
+    public String getNumero(){
+        return DSNumero.getText();
+    }
+    
+    public String getLocalidade(){
+        return DSLocalidade.getText();
+    }
+    
+    public String getLogradouro(){
+        return DSLogradouro.getText();
+    }
+    
+    public String getCPF(){
+        return DSCPF.getText();
+    }
+    
+    public String getBairro(){
+        return DSBairro.getText();
+    }
+    
+    public String getCEP(){
+        return DSCEP.getText();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DSBairro;

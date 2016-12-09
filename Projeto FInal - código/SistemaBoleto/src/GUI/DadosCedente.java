@@ -5,14 +5,14 @@
  */
 package GUI;
 
-import org.jrimum.domkee.financeiro.banco.febraban.Cedente;
+
 
 /**
  *
  * @author talli
  */
 public class DadosCedente extends javax.swing.JInternalFrame {
-    String x;
+    
     /**
      * Creates new form DadosCedente
      */
@@ -115,9 +115,18 @@ public class DadosCedente extends javax.swing.JInternalFrame {
     private void DCOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DCOKMouseClicked
 
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_DCOKMouseClicked
 
+    public String retornaNome(){
+        String nome = DCNome1.getText();
+        return nome;
+    }
+    
+    public String retornaCNPJ(){
+        String CNPJ = DCCNPJ.getText();
+        return CNPJ;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DCCNPJ;
