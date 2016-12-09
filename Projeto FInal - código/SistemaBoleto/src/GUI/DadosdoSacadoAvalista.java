@@ -170,17 +170,7 @@ public class DadosdoSacadoAvalista extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DSAOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DSAOKMouseClicked
-        SacadorAvalista sacadorAvalista = new SacadorAvalista(DSANome.getText(), DSACPF.getText());
-
-        // Informando o endereço do sacador avalista.
-        Endereco enderecoSacAval = new Endereco();
-        enderecoSacAval.setUF(UnidadeFederativa.DF);
-        enderecoSacAval.setLocalidade(DSALocalidade.getText());
-        enderecoSacAval.setCep(new CEP(DSACEP.getText()));
-        enderecoSacAval.setBairro(DSABairro.getText());
-        enderecoSacAval.setLogradouro(DSALogradouro.getText());
-        enderecoSacAval.setNumero(DSANumero.getText());
-        sacadorAvalista.addEndereco(enderecoSacAval);
+        
         
         this.dispose();
     }//GEN-LAST:event_DSAOKMouseClicked

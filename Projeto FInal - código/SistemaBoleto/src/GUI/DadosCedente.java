@@ -12,7 +12,7 @@ import org.jrimum.domkee.financeiro.banco.febraban.Cedente;
  * @author talli
  */
 public class DadosCedente extends javax.swing.JInternalFrame {
-
+    String x;
     /**
      * Creates new form DadosCedente
      */
@@ -114,7 +114,6 @@ public class DadosCedente extends javax.swing.JInternalFrame {
 
     private void DCOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DCOKMouseClicked
 
-        Cedente cedente = new Cedente(DCNome1.getText(), DCCNPJ.getText());
         
         this.dispose();
     }//GEN-LAST:event_DCOKMouseClicked

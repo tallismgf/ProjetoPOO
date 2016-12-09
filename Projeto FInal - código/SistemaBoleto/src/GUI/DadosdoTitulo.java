@@ -196,20 +196,7 @@ public class DadosdoTitulo extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DTOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DTOKMouseClicked
-        Titulo titulo = new Titulo(contaBancaria, sacado, cedente, sacadorAvalista);
-        titulo.setNumeroDoDocumento(DTNumeroDocumento.getText());
-        titulo.setNossoNumero(DTNossoNumero.getText());
-        titulo.setDigitoDoNossoNumero(DTDigitoNossoNumero.getText());
-        titulo.setValor(BigDecimal.valueOf(0.23));
-        titulo.setDataDoDocumento(new Date());
-        titulo.setDataDoVencimento(new Date());
-        titulo.setTipoDeDocumento(TipoDeTitulo.DM_DUPLICATA_MERCANTIL);
-        titulo.setAceite(Titulo.EnumAceite.A);
-        titulo.setDesconto(new BigDecimal(0.05));
-        titulo.setDeducao(BigDecimal.ZERO);
-        titulo.setMora(BigDecimal.ZERO);
-        titulo.setAcrecimo(BigDecimal.ZERO);
-        titulo.setValorCobrado(BigDecimal.ZERO);
+        
         
         this.dispose();
     }//GEN-LAST:event_DTOKMouseClicked

@@ -1,5 +1,7 @@
-package GUI;
+package controle;
 
+import GUI.*;
+import GUI.DadosCedente;
 import GUI.MDIBoleto;
 import java.io.File;
 import java.io.IOException;
@@ -42,22 +44,27 @@ import org.jrimum.domkee.financeiro.banco.febraban.Titulo.EnumAceite;
  */
 public class MeuPrimeiroBoleto {
 
+
     public static void main(String[] args) {
         
         MDIBoleto janela = new MDIBoleto();
         janela.setVisible(true);
+        DadosCedente DaC = new DadosCedente();
         
+        String z = x;
+        
+       
         
         /*
                  * INFORMANDO DADOS SOBRE O CEDENTE.
          */
-        /* tirar aqui ------------------------
+        
         Cedente cedente = new Cedente("PROJETO JRimum", "00.000.208/0001-00");
         
         /*
                  * INFORMANDO DADOS SOBRE O SACADO.
          */
-        /* TIRAR AQUI ---------------------------
+        
         Sacado sacado = new Sacado("JavaDeveloper Pronto Para Férias", "222.222.222-22");
 
         // Informando o endereço do sacado.
@@ -73,7 +80,7 @@ public class MeuPrimeiroBoleto {
         /*
                  * INFORMANDO DADOS SOBRE O SACADOR AVALISTA.
          */
-        /* TIRAR AQUI --------------------------
+        
         SacadorAvalista sacadorAvalista = new SacadorAvalista("JRimum Enterprise", "00.000.000/0001-91");
 
         // Informando o endereço do sacador avalista.
@@ -89,7 +96,7 @@ public class MeuPrimeiroBoleto {
         /*
                  * INFORMANDO OS DADOS SOBRE O TÍTULO.
          */
-        /* TIRAR AQUI ----------------------
+        
         // Informando dados sobre a conta bancária do título.
         ContaBancaria contaBancaria = new ContaBancaria(BancosSuportados.BANCO_DO_BRASIL.create());
         contaBancaria.setNumeroDaConta(new NumeroDaConta(123456, "0"));
@@ -114,7 +121,7 @@ public class MeuPrimeiroBoleto {
         /*
                  * INFORMANDO OS DADOS SOBRE O BOLETO.
          */
-        /* TIRAR AQUI ---------------
+        
         Boleto boleto = new Boleto(titulo);
 
         boleto.setLocalPagamento("Pagável preferencialmente na Rede X ou em "
@@ -135,7 +142,7 @@ public class MeuPrimeiroBoleto {
          */
         // Instanciando um objeto "BoletoViewer", classe responsável pela
         // geração do boleto bancário.
-        /* TIRAR AQUI -------------------
+        
         BoletoViewer boletoViewer = new BoletoViewer(boleto);
 
         // Gerando o arquivo. No caso o arquivo mencionado será salvo na mesma
@@ -146,9 +153,9 @@ public class MeuPrimeiroBoleto {
 
         // Mostrando o boleto gerado na tela.
         mostreBoletoNaTela(arquivoPdf);
-        TIRAR AQUI ------------------*/ 
         
     }
+    
 
     /**
      * Exibe o arquivo na tela.

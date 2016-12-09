@@ -127,12 +127,7 @@ public class DadosdaContaBancaria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DCBOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DCBOKMouseClicked
-        ContaBancaria contaBancaria = new ContaBancaria(BancosSuportados.BANCO_DO_BRASIL.create());
-        int x = Integer.parseInt(DCBNumeroConta.getText());
-        contaBancaria.setNumeroDaConta(new NumeroDaConta(x, "0"));
-        contaBancaria.setCarteira(new Carteira(30));
-        x = Integer.parseInt(DCBNumeroAgencia.getText());
-        contaBancaria.setAgencia(new Agencia(x, "1"));
+        
         
         this.dispose();
     }//GEN-LAST:event_DCBOKMouseClicked

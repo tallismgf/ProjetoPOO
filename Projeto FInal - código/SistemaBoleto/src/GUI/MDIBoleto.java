@@ -144,37 +144,7 @@ public class MDIBoleto extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuTituloMouseClicked
 
     private void MenuFinalizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuFinalizarMouseClicked
-        Boleto boleto = new Boleto(titulo);
-
-        boleto.setLocalPagamento("Pagável preferencialmente na Rede X ou em "
-                + "qualquer Banco até o Vencimento.");
-        boleto.setInstrucaoAoSacado("Senhor sacado, sabemos sim que o valor "
-                + "cobrado não é o esperado, aproveite o DESCONTÃO!");
-        boleto.setInstrucao1("PARA PAGAMENTO 1 até Hoje não cobrar nada!");
-        boleto.setInstrucao2("PARA PAGAMENTO 2 até Amanhã Não cobre!");
-        boleto.setInstrucao3("PARA PAGAMENTO 3 até Depois de amanhã, OK, não cobre.");
-        boleto.setInstrucao4("PARA PAGAMENTO 4 até 04/xx/xxxx de 4 dias atrás COBRAR O VALOR DE: R$ 01,00");
-        boleto.setInstrucao5("PARA PAGAMENTO 5 até 05/xx/xxxx COBRAR O VALOR DE: R$ 02,00");
-        boleto.setInstrucao6("PARA PAGAMENTO 6 até 06/xx/xxxx COBRAR O VALOR DE: R$ 03,00");
-        boleto.setInstrucao7("PARA PAGAMENTO 7 até xx/xx/xxxx COBRAR O VALOR QUE VOCÊ QUISER!");
-        boleto.setInstrucao8("APÓS o Vencimento, Pagável Somente na Rede X.");
         
-        
-        /*
-                 * GERANDO O BOLETO BANCÁRIO.
-         */
-        // Instanciando um objeto "BoletoViewer", classe responsável pela
-        // geração do boleto bancário.
-        BoletoViewer boletoViewer = new BoletoViewer(boleto);
-
-        // Gerando o arquivo. No caso o arquivo mencionado será salvo na mesma
-        // pasta do projeto. Outros exemplos:
-        // WINDOWS: boletoViewer.getAsPDF("C:/Temp/MeuBoleto.pdf");
-        // LINUX: boletoViewer.getAsPDF("/home/temp/MeuBoleto.pdf");
-        File arquivoPdf = boletoViewer.getPdfAsFile("MeuPrimeiroBoleto.pdf");
-
-        // Mostrando o boleto gerado na tela.
-        mostreBoletoNaTela(arquivoPdf);
         
         
         

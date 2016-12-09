@@ -170,17 +170,7 @@ public class DadosdoSacado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DSOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DSOKMouseClicked
-        Sacado sacado = new Sacado(DSNome.getText(), DSCPF.getText());
-
-        // Informando o endereço do sacado.
-        Endereco enderecoSac = new Endereco();
-        enderecoSac.setUF(UnidadeFederativa.RN);
-        enderecoSac.setLocalidade(DSLocalidade.getText());
-        enderecoSac.setCep(new CEP(DSCEP.getText()));
-        enderecoSac.setBairro(DSBairro.getText());
-        enderecoSac.setLogradouro(DSLogradouro.getText());
-        enderecoSac.setNumero(DSNumero.getText());
-        sacado.addEndereco(enderecoSac);
+        
         
         this.dispose();
     }//GEN-LAST:event_DSOKMouseClicked
